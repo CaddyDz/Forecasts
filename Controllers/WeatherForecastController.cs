@@ -12,7 +12,7 @@ namespace App.Controllers
 	[Route("api/[controller]")]
 	public class WeatherForecastController : ControllerBase
 	{
-		private static readonly string[] Summaries = new[]
+		private static readonly string[] summaries = new[]
 		{
 			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 		};
@@ -30,9 +30,9 @@ namespace App.Controllers
 			var rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
-				Date = DateTime.Now.AddDays(index).ToLongDateString(),
-				TemperatureC = rng.Next(-20, 55),
-				Summary = Summaries[rng.Next(Summaries.Length)]
+				date = DateTime.Now.AddDays(index).ToLongDateString(),
+				tempertaure_c = rng.Next(-20, 55),
+				summary = summaries[rng.Next(summaries.Length)]
 			})
 			.ToArray();
 		}
